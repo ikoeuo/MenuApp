@@ -16,9 +16,13 @@ public partial class SummaryPage : ContentPage
         
     }
 
+    }
     public void Checkout()
     {
         newItemsPrice.Text = $"Items Price: {b.ItemsPrice()}";
+        newHST.Text = $"HST 13% : {b.HST()}";
+        newTip.Text = $"Tip 5% : {b.Tip()}";
+        newTotal.Text = $"Total: {b.TotalPrice()}";
     }
 
 }
