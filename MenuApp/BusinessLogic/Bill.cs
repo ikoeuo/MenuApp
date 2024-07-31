@@ -10,23 +10,23 @@ namespace MenuApp.BusinessLogic
     {
         public List<Dish> SelectedItems { get; set; }
 
-        double ItemsPrice
+        public double ItemsPrice()
         {
-            get { return SelectedItems.Sum(dish => dish.Price); }
+            return SelectedItems.Sum(dish => dish.Price);
         }
 
-        double HST 
+        public double HST() 
         {
-            get {return ItemsPrice * 0.13; }
+            return ItemsPrice() * 0.13;
         }
-        double Tip 
-        { 
-            get {return ItemsPrice * 0.05;  }
+        public double Tip()
+        {
+            return ItemsPrice() * 0.05;
         }
         
-        double TotalPrice
+        public double TotalPrice()
         {
-            get { return ItemsPrice + HST + Tip; }
+            return ItemsPrice() + HST() + Tip(); 
         }
 
         public Bill(List<Dish> selectedItems)
@@ -34,5 +34,8 @@ namespace MenuApp.BusinessLogic
             SelectedItems = selectedItems ?? new List<Dish>();
         }
 
+        public Bill()
+        {
+        }
     }
 }

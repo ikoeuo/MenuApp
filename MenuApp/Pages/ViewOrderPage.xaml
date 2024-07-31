@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MenuApp.NewFolder.ViewOrderPage"
+             Title="">
+    <ScrollView>
+        <VerticalStackLayout Padding="30,0" Spacing="25">
+            <Label 
+                Text="Please review your order" 
+                Style="{StaticResource Headline}" 
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Label 
+                Text="Note: Items can be removed by clicking on them" 
+                Style="{StaticResource SubHeadline}" 
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <ListView ItemsSource="{Binding SelectedDishes}"> 
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10" ColumnSpacing="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="{Binding Image}" WidthRequest="150" HeightRequest="150" Grid.Column="0"/>
+                                <Label Text="{Binding Name}" Style="{StaticResource Headline}" HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="1" FontSize="Medium"/>
+                                <Label Text="{Binding Price}" HorizontalOptions="End" VerticalOptions="Center" Grid.Column="2" FontSize="Medium"/>
+                                <Button BackgroundColor="Transparent" Grid.ColumnSpan="2" Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.RemoveCommand}" CommandParameter="{Binding}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            
+            <Button 
+                x:Name="addMoreItemsBtn" 
+                Text="Add more items" Clicked="addMoreItemsBtnClicked" 
+                HorizontalOptions="Center" 
+                BackgroundColor="CornflowerBlue"/>
+            <Button 
+                x:Name="checkoutBtn" 
+                Text="checkout" Clicked="checkoutBtnClicked" 
+                HorizontalOptions="Center" 
+                BackgroundColor="CornflowerBlue"/>  
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

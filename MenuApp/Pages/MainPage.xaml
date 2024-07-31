@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MenuApp.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <Label
+                Text="Welcome to Nikole's Dinner :D"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Image
+                Source="main.jpg"
+                HeightRequest="400"
+                Aspect="AspectFit"/>
+
+            <Button
+                x:Name="startOrder"
+                Text="Start your order" 
+                Clicked="StartOrderClicked"
+                HorizontalOptions="Fill" 
+                BackgroundColor="CornflowerBlue"/>
+
+            <Label
+                Text="Nikole Phipps Santos 991643529"
+                Style="{StaticResource SubHeadline}"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

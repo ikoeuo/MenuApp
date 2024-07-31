@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MenuApp.NewFolder.OrderPage">
+     
+    <ScrollView>
+        <VerticalStackLayout Padding="30,0" Spacing="25">
+            <Label 
+                Text="Select Your Dish" 
+                Style="{StaticResource Headline}" 
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Button 
+                x:Name="showOrder" 
+                Text="Show my order" Clicked="showOrderClicked" 
+                HorizontalOptions="Center" 
+                BackgroundColor="CornflowerBlue"/>
+
+            <ListView ItemsSource="{Binding Dishes}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10" ColumnSpacing="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="{Binding Image}" WidthRequest="150" HeightRequest="150" Grid.Column="0"/>
+                                <Label Text="{Binding Name}" Style="{StaticResource Headline}" HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="1" FontSize="Medium"/>
+                                <Label Text="{Binding Price}" HorizontalOptions="End" VerticalOptions="Center" Grid.Column="2" FontSize="Medium"/>
+                                <Button BackgroundColor="Transparent" Grid.ColumnSpan="2"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.AddCommand}" 
+                                        CommandParameter="{Binding}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

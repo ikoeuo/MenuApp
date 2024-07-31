@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MenuApp.Pages.SummaryPage"
+             Title="">
+
+    <ScrollView>
+        
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            
+            <Label 
+                x:Name="newOrderBill"
+                Text="Order Bill"
+                FontSize="40"
+                FontAttributes="Bold"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                IsVisible="true"/>
+            <Label 
+                x:Name="newItemsPrice"
+                Text="Items Price: " 
+                FontSize="35"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Label 
+                x:Name="newHST"
+                Text="HST 13%: " 
+                FontSize="35"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Label 
+                x:Name="newTip"
+                Text="Tip 5%: "
+                FontSize="35"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Label 
+                x:Name="newTotal"
+                Text="Total: " 
+                FontSize="35"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

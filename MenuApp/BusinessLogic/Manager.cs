@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MenuApp.BusinessLogic
+﻿namespace MenuApp.BusinessLogic
 {
     public class Manager
     {
@@ -18,22 +11,27 @@ namespace MenuApp.BusinessLogic
 
         }
 
-        public void Add(Dish dish)
+        public void AddDish(Dish dish)
         {
             dishes.Add(dish);
         }
 
+        public void AddSelected(Dish dish)
+        {
+            selectedDishes.Add(dish);
+        }
+
         public List<Dish> GetListDishes()
         {
-            return new List<Dish>(dishes);
+            return dishes;
         }
 
         public List<Dish> GetSelectedDishes()
         {
-            return new List<Dish>(selectedDishes);
+            return selectedDishes;
         }
 
-        public void Remove(Dish dish)
+        public void RemoveDish(Dish dish)
         {
             selectedDishes.Remove(dish);
         }
