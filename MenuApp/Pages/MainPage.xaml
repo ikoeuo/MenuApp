@@ -9,8 +9,9 @@
             Spacing="25">
 
             <Label
-                Text="Welcome to Nikole's Dinner :D"
+                Text="Welcome to Nikole's Diner :D"
                 Style="{StaticResource Headline}"
+                FontAttributes="Bold"
                 SemanticProperties.HeadingLevel="Level1" />
 
             <Image

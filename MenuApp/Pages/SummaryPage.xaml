@@ -9,39 +9,39 @@
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
-            
+
+            <Label/>
+
             <Label 
                 x:Name="newOrderBill"
                 Text="Order Bill"
                 FontSize="40"
                 FontAttributes="Bold"
-                VerticalOptions="Center" 
-                HorizontalOptions="Center"
-                IsVisible="true"/>
+                HorizontalOptions="Center"/>
             <Label 
                 x:Name="newItemsPrice"
                 Text="Items Price: " 
                 FontSize="35"
-                VerticalOptions="Center" 
                 HorizontalOptions="Center" />
             <Label 
                 x:Name="newHST"
                 Text="HST 13%: " 
                 FontSize="35"
-                VerticalOptions="Center" 
                 HorizontalOptions="Center" />
             <Label 
                 x:Name="newTip"
                 Text="Tip 5%: "
                 FontSize="35"
-                VerticalOptions="Center" 
                 HorizontalOptions="Center" />
             <Label 
                 x:Name="newTotal"
                 Text="Total: " 
                 FontSize="35"
-                VerticalOptions="Center" 
                 HorizontalOptions="Center" />
+            <Image
+                Source="smileface.png"
+                HeightRequest="200"
+                WidthRequest="200"/>
 
         </VerticalStackLayout>
     </ScrollView>

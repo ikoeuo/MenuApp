@@ -6,9 +6,9 @@ namespace MenuApp.NewFolder;
 
 public partial class ViewOrderPage : ContentPage
 {
-    public Manager m;
+    public Manager? m;
 
-    public Bill b;
+    public Bill? b;
     public ObservableCollection<Dish> SelectedDishes { get; set; }
     public Command<Dish> RemoveCommand { get; }
 
@@ -18,7 +18,7 @@ public partial class ViewOrderPage : ContentPage
         m = manager;
         b = bill;
         SelectedDishes = new ObservableCollection<Dish>(m.GetSelectedDishes());
-        RemoveCommand = new Command<Dish>(RemoveFromOrder);
+        RemoveCommand = new Command<Dish>(RemoveFromOrder); //when buttons are clicked dishes are removed from the order
         BindingContext = this;
      }
 
@@ -42,6 +42,6 @@ public partial class ViewOrderPage : ContentPage
     {
         m.RemoveDish(dish);
         SelectedDishes.Remove(dish);
-        DisplayAlert("Dish Added", $"{dish.Name} has been added to order.", "OK");
+        DisplayAlert("Dish Removed", $"{dish.Name} has been removed from order.", "OK");
     }
 }

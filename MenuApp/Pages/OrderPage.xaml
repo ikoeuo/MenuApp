@@ -5,9 +5,13 @@
      
     <ScrollView>
         <VerticalStackLayout Padding="30,0" Spacing="25">
+
+            <Label/>
+            
             <Label 
                 Text="Select Your Dish" 
-                Style="{StaticResource Headline}" 
+                Style="{StaticResource Headline}"
+                FontAttributes="Bold"
                 SemanticProperties.HeadingLevel="Level1" />
 
             <Button 
@@ -27,7 +31,7 @@
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
                                 <Image Source="{Binding Image}" WidthRequest="150" HeightRequest="150" Grid.Column="0"/>
-                                <Label Text="{Binding Name}" Style="{StaticResource Headline}" HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="1" FontSize="Medium"/>
+                                <Label Text="{Binding Name}" Style="{StaticResource Headline}" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="1" FontSize="Medium"/>
                                 <Label Text="{Binding Price}" HorizontalOptions="End" VerticalOptions="Center" Grid.Column="2" FontSize="Medium"/>
                                 <Button BackgroundColor="Transparent" Grid.ColumnSpan="2"
                                         Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.AddCommand}" 

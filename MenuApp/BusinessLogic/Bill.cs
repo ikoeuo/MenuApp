@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MenuApp.BusinessLogic
 {
@@ -10,23 +8,23 @@ namespace MenuApp.BusinessLogic
     {
         public List<Dish> SelectedItems { get; set; }
 
-        public double ItemsPrice()
+        public double ItemsPrice() //adds up the total price of all of the dishes in the order
         {
             return SelectedItems.Sum(dish => dish.Price);
         }
 
-        public double HST() 
+        public double HST() //calculates tax based on the total price
         {
-            return ItemsPrice() * 0.13;
+            return Math.Round((ItemsPrice() * 0.13), 2);
         }
-        public double Tip()
+        public double Tip() //calculates tip based on the total price
         {
-            return ItemsPrice() * 0.05;
+            return Math.Round((ItemsPrice() * 0.05), 2);
         }
         
-        public double TotalPrice()
+        public double TotalPrice() //adds up the total price of all of the dishes in the order, tax, and tip to get the total order price
         {
-            return ItemsPrice() + HST() + Tip(); 
+            return Math.Round((ItemsPrice() + HST() + Tip()), 2); 
         }
 
         public Bill(List<Dish> selectedItems)
@@ -34,8 +32,5 @@ namespace MenuApp.BusinessLogic
             SelectedItems = selectedItems ?? new List<Dish>();
         }
 
-        public Bill()
-        {
-        }
     }
 }
